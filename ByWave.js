@@ -129,6 +129,12 @@ function createWidget(){
 
   bannerStack.addSpacer(null);
 
+  if (data == null)
+  {
+    bannerStack.addText(`网络错误`);
+    return listWidget;
+  }
+
   let item = bannerStack.addText(`${data.expires}后到期`)
   item.textColor = new Color('#E9B526')
 	item.font = Font.systemFont(9);
